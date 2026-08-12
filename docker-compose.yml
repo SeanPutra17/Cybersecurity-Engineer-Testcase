@@ -1,0 +1,35 @@
+services:
+ app:
+  build: ./app
+  container_name: nauli_app
+  restart: unless-stopped
+  networks:
+   - lab_net
+
+ nginx:
+  build: ./nginx
+  container_name: nauli_nginx
+  restart: unless-stopped
+  depends_on:
+   - app
+  ports:
+   - "3075:3075"
+  volumes:
+   - /opt/admin/logs:/var/log/nginx
+  networks:
+   - lab_net
+
+#  log-seeder:
+#    build: ./log-seeder
+#    container_name: nauli_log_seeder
+#    depends_on:
+#      - nginx
+#    volumes:
+#      - /opt/admin/logs:/opt/admin/logs
+#    networks:
+#      - lab_net
+#    restart: "no"
+
+networks:
+  lab_net:
+    driver: bridge

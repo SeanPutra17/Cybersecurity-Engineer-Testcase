@@ -22,7 +22,7 @@ app.use(cookieParser());
 
 app.use((req, res, next) => {
 	const hasAnySession = req.cookies.pre_mfa_session ||
-		Object.keys(req.cookies).some(k => k.startWith('adm_session'));
+		Object.keys(req.cookies).some(k => k.startsWith('adm_session'));
 
 	if (!hasAnySession){
 		res.cookie('pre_mfa_session', 'pending_mfa_verification', {
@@ -127,7 +127,7 @@ app.post('/api/verify-mfa', (req, res) => {
 
 app.get('/dashboard', (req, res) => {
 	const cookieKeys = Object.keys(req.cookies);
-	const hasAdminSession = cookieKeys.some(k => k.startWith('adm_session'));
+	const hasAdminSession = cookieKeys.some(k => k.startsWith('adm_session'));
 
 	if (!hasAdminSession){
 		return res.status(401).send('Not Authorized. Enter MFA at /api/verify-mfa');
@@ -151,7 +151,7 @@ app.get('/dashboard', (req, res) => {
 					<p>Here's recent feedback list</p>
 
 					<h2>Recent Feedback</h2>
-					${feedbackHTML || '<p><em>No feedback yet ....</em></p>'};
+					${feedbackHtml || '<p><em>No feedback yet ....</em></p>'};
 
 					<hr>
 					<!-- nothing to see here ! -->
