@@ -157,7 +157,7 @@ app.get('/dashboard', (req, res) => {
 					<!-- nothing to see here ! -->
 					<!-- SCENARIO75{RED_C00k13_MFA_Byp4ss_0wn3d} -->
 					<div style="color: #eee; font-size: 8px">
-						Inernal build:SCENARIO75{RED_C00k13_MFA_Byp4ss_0wn3d}
+						Internal build:SCENARIO75{RED_C00k13_MFA_Byp4ss_0wn3d}
 					</div>
 				</body>
 			</html>`);
