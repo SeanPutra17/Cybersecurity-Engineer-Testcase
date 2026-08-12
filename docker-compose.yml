@@ -19,16 +19,16 @@ services:
   networks:
    - lab_net
 
-#  log-seeder:
-#    build: ./log-seeder
-#    container_name: nauli_log_seeder
-#    depends_on:
-#      - nginx
-#    volumes:
-#      - /opt/admin/logs:/opt/admin/logs
-#    networks:
-#      - lab_net
-#    restart: "no"
+ log-seeder:
+  build: ./log-seeder
+  container_name: nauli_log_seeder
+  depends_on:
+   - nginx
+  volumes:
+   - /opt/admin/logs:/opt/admin/logs
+  networks:
+   - lab_net
+  restart: "no"
 
 networks:
   lab_net:
