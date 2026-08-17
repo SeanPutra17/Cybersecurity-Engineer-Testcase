@@ -1,4 +1,4 @@
-# --- Nauli CTF Lab -- Cookies Reuse & MFA Bypass ---
+#  -- Cookies Reuse & MFA Bypass ---
 
 
 Self-contained Red vs Blue CTF lab. Vulnerable Admin Feedback System with XSS -> session-replay chain and matching Blue Team log telementry.
